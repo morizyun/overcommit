@@ -251,7 +251,6 @@ PreCommit:
     enabled: false
     description: 'Suggest some speed improvements'
     required_executable: 'fasterer'
-    quiet: true
 
   ForbiddenBranches:
     enabled: false
@@ -860,6 +859,15 @@ PrePush:
     enabled: false
     description: 'Run Test::Unit test suite'
     command: ['ruby', '-Ilib:test', '-rtest/unit', "-e 'exit! Test::Unit::AutoRunner.run'"]
+
+  Brakeman:
+    enabled: false
+    description: 'Check for security vulnerabilities'
+    required_executable: 'brakeman'
+    flags: ['--exit-on-warn', '--quiet', '--summary']
+    install_command: 'gem install brakeman'
+    include:
+      - '**/*.rb'
 
 # Hooks that run during `git rebase`, before any commits are rebased.
 # If a hook fails, the rebase is aborted.
