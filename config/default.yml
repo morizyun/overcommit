@@ -864,7 +864,7 @@ PrePush:
     enabled: false
     description: 'Check for security vulnerabilities'
     required_executable: 'brakeman'
-    flags: ['--exit-on-warn', '--quiet', '--summary']
+    flags: ['--quiet', '--summary']
     install_command: 'gem install brakeman'
     include:
       - '**/*.rb'
