@@ -251,6 +251,7 @@ PreCommit:
     enabled: false
     description: 'Suggest some speed improvements'
     required_executable: 'fasterer'
+    include: '**/*.rb'
 
   ForbiddenBranches:
     enabled: false
